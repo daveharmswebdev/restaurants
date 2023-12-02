@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { CountService } from '../services/count.service';
+import { IAppState } from '../store/reducers/counter.reducer';
+import { Store } from '@ngrx/store';
+import { selectCount } from '../store/selectors/count.selectors';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +9,6 @@ import { CountService } from '../services/count.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  count$ = this.countService.count$;
-  constructor(private countService: CountService) {}
+  count$ = this.store.select(selectCount);
+  constructor(private store: Store<IAppState>) {}
 }

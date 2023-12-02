@@ -25,4 +25,12 @@
       <button mat-button (click)="changeCountByService(-1)">Subtract</button>
     </div>
   </div>
+  <div>
+    <h4>Count by NGRX</h4>
+    <div>{{ count$ | async }}</div>
+    <div>
+      <button mat-button color="primary" (click)="increment()">Add</button>
+      <button mat-button (click)="decrement()">Subtract</button>
+    </div>
+  </div>
 </div>
