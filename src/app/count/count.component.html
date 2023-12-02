@@ -1,0 +1,28 @@
+<div class="count-container">
+  <div>
+    <h4>Count by class property</h4>
+    <div>{{ count }}</div>
+    <div>
+      <button mat-button color="primary" (click)="addProperty(1)">Add</button>
+      <button mat-button (click)="addProperty(-1)">Subtract</button>
+    </div>
+  </div>
+  <div>
+    <h4>Count by class property</h4>
+    <div>{{ countSubject$ | async }}</div>
+    <div>
+      <button mat-button color="primary" (click)="changeCount(1)">Add</button>
+      <button mat-button (click)="changeCount(-1)">Subtract</button>
+    </div>
+  </div>
+  <div>
+    <h4>Count by Service</h4>
+    <div>{{ countByService$ | async }}</div>
+    <div>
+      <button mat-button color="primary" (click)="changeCountByService(1)">
+        Add
+      </button>
+      <button mat-button (click)="changeCountByService(-1)">Subtract</button>
+    </div>
+  </div>
+</div>
