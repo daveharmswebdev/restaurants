@@ -6,6 +6,10 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'count', component: CountComponent },
+  {
+    path: 'staff',
+    loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule),
+  },
 ];
 
 @NgModule({
